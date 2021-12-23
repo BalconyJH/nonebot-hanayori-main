@@ -99,6 +99,7 @@ async def live():  # 定时推送直播间状态
 	logger.info('检测到 {} 直播状态更新'.format(anchors[live_index][1]))
 	model.UpdateLive(anchors[live_index][0], live_status)
 	cards = model.GetALLCard(anchors[live_index][0])
+	print(cards)
 	for card in cards:
 		if card[3] == 1:  # 允许推送直播
 			if card[1] == 1:  # 是群聊
